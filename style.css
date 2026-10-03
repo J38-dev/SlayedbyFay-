@@ -1,4 +1,4 @@
-/* =========================================================
+ /* =========================================================
    SLAyED BY FAY — DESIGN SYSTEM
    PART 2 — style.css
    ========================================================= */
@@ -362,20 +362,19 @@ p {
   top: -11px;
   right: -22px;
 
-  color: var(--accent);
+  object-fit: contain;
+  object-position: center;
 
   transform: rotate(7deg);
   transform-origin: center;
 
   transition:
-    transform var(--normal) var(--ease),
-    color var(--normal) var(--ease);
+    transform var(--normal) var(--ease);
 }
 
 .brand:hover .brand-butterfly {
-  color: var(--ink);
   transform: rotate(-5deg) translateY(-2px);
-}
+     }
 
 
 /* ================================
