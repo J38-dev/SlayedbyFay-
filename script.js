@@ -927,6 +927,15 @@ function renderPolishPalette() {
         </button>
       `).join("")}
     </div>
+
+    <button
+      type="button"
+      class="button button-dark polish-book-button"
+      id="polishBookButton"
+    >
+      Book this set
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
   `;
 
   estimator.appendChild(section);
@@ -947,8 +956,70 @@ function renderPolishPalette() {
       }
     });
   });
-}
 
+  $("#polishBookButton")?.addEventListener("click", () => {
+
+    const serviceId = $("#priceService")?.value;
+    const lengthValue = $("#priceLength")?.value;
+    const designValue = $("#priceDesign")?.value;
+    const selectedColor = $(".polish-color.selected");
+
+    if (!serviceId) {
+      $("#priceService")?.focus();
+      return;
+    }
+
+    if (!selectedColor) {
+      alert("Please choose a colour first.");
+      return;
+    }
+
+    const service = getService(serviceId);
+
+    if (!service) return;
+
+    const lengthLabel =
+      $("#priceLength")?.options[
+        $("#priceLength").selectedIndex
+      ]?.textContent.trim() || "Short";
+
+    const designLabel =
+      $("#priceDesign")?.options[
+        $("#priceDesign").selectedIndex
+      ]?.textContent.trim() || "No additional nail art";
+
+    const colorName = selectedColor.dataset.color;
+
+    const total =
+      service.price +
+      (LENGTH_PRICES[lengthValue] || 0) +
+      (DESIGN_PRICES[designValue] || 0);
+
+    const bookingService = $("#bookingService");
+
+    if (bookingService) {
+      bookingService.value = serviceId;
+      bookingService.dispatchEvent(new Event("change"));
+    }
+
+    const bookingDesign = $("#bookingDesign");
+
+    if (bookingDesign) {
+      bookingDesign.value =
+        `Colour: ${colorName}\n` +
+        `Nail length: ${lengthLabel}\n` +
+        `Nail art: ${designLabel}\n` +
+        `Estimated price: ${formatMoney(total)}`;
+    }
+
+    document
+      .querySelector("#booking")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+  });
+                                           }
 
 /* =========================================================
    21. NAIL QUIZ
