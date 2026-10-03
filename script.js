@@ -1439,10 +1439,10 @@ function renderFAQs() {
   $$(".faq-question").forEach(button => {
     button.addEventListener("click", () => {
       const item = button.closest(".faq-item");
-      const isOpen = item.classList.contains("is-open");
+      const isOpen = item.classList.contains("open");
 
       $$(".faq-item").forEach(other => {
-        other.classList.remove("is-open");
+        other.classList.remove("open");
 
         other
           .querySelector(".faq-question")
@@ -1450,7 +1450,7 @@ function renderFAQs() {
       });
 
       if (!isOpen) {
-        item.classList.add("is-open");
+        item.classList.add("open");
         button.setAttribute("aria-expanded", "true");
       }
     });
