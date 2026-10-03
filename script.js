@@ -724,14 +724,14 @@ const closeButton =
   if (!menuButton || !menu) return;
 
   function openMenu() {
-    menu.classList.add("is-open");
+  menu.classList.add("active");
     overlay?.classList.add("is-visible");
     document.body.classList.add("menu-open");
     menuButton.setAttribute("aria-expanded", "true");
   }
 
   function closeMenu() {
-    menu.classList.remove("is-open");
+  menu.classList.remove("active");
     overlay?.classList.remove("is-visible");
     document.body.classList.remove("menu-open");
     menuButton.setAttribute("aria-expanded", "false");
