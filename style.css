@@ -606,7 +606,7 @@ p {
   min-height: 100svh;
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding: 100px var(--gutter) 55px;
   overflow: hidden;
    }
