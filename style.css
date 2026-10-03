@@ -778,6 +778,34 @@ p {
   line-height: 1.65;
 }
 
+.service-card button {
+  width: 100%;
+  margin-top: 20px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--bg);
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--fast) var(--ease);
+}
+
+.service-card button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+                  }
+
+
 .service-price {
   margin-top: 22px;
   color: var(--ink);
