@@ -1656,6 +1656,10 @@ p {
   transition: max-height var(--normal) var(--ease);
 }
 
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+
 .faq-answer-inner {
   padding: 0 35px 20px 0;
   color: var(--ink-soft);
