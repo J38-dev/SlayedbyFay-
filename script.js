@@ -705,10 +705,21 @@ function setupBusinessInfo() {
    ========================================================= */
 
 function setupMobileMenu() {
-  const menuButton = $("#menuToggle");
-  const menu = $("#mobileMenu");
-  const overlay = $("#mobileMenuOverlay");
-  const closeButton = $("#menuClose");
+  const menuButton =
+  $("#menuToggle") ||
+  $("#mobileMenuButton") ||
+  $(".menu-toggle");
+
+const menu =
+  $("#mobileMenu") ||
+  $(".mobile-menu");
+
+const overlay = $("#mobileMenuOverlay");
+
+const closeButton =
+  $("#menuClose") ||
+  $("#mobileMenuClose") ||
+  $(".menu-close");
 
   if (!menuButton || !menu) return;
 
@@ -996,12 +1007,12 @@ function renderQuizQuestion() {
   }
 
   if (nextButton) {
-    nextButton.disabled = !quizAnswers[quizIndex];
-    nextButton.textContent =
-      quizIndex === QUIZ.length - 1
-        ? "See my result"
-        : "Next";
-  }
+  nextButton.disabled = false;
+  nextButton.textContent =
+    quizIndex === QUIZ.length - 1
+      ? "See my result"
+      : "Next";
+   }
 
   $$(".quiz-option").forEach(button => {
     button.addEventListener("click", () => {
@@ -1777,9 +1788,7 @@ function setupSocialButtons() {
 document.addEventListener("DOMContentLoaded",()=>{
  alert("SLAYED JS IS RUNNING");
 
- setupBusinessInfo();
- setupMobileMenu();
- populateServiceSelects();
+ 
 
 
 console.log("SLAYED BY FAY JS IS RUNNING");
