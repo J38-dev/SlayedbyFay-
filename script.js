@@ -1,3 +1,5 @@
+alert("JS WORKS");
+
 /* =========================================================
    SLAYED BY FAY — MAIN JAVASCRIPT
    Edit the DATA section first.
