@@ -1,4 +1,4 @@
-alert("JS WORKS");
+
 
 /* =========================================================
    SLAYED BY FAY — MAIN JAVASCRIPT
@@ -1857,7 +1857,7 @@ function setupSocialButtons() {
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded",()=>{
- alert("SLAYED JS IS RUNNING");
+ 
 
  
 
