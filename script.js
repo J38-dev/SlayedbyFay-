@@ -976,7 +976,7 @@ function renderQuizQuestion() {
   }
 
   container.innerHTML = `
-    <div class="quiz-question">
+<div class="quiz-question active">
       <span class="quiz-question-number">
         0${quizIndex + 1}
       </span>
