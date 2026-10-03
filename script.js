@@ -699,10 +699,17 @@ function setupBusinessInfo() {
    16. MOBILE NAVIGATION
    ========================================================= */
 
-const menuButton = $("#menuToggle");
-const menu = $("#mobileMenu");
-const overlay = $("#mobileMenuOverlay");
-const closeButton = $("#menuClose");
+
+/* =========================================================
+   16. MOBILE NAVIGATION
+   ========================================================= */
+
+function setupMobileMenu() {
+  const menuButton = $("#menuToggle");
+  const menu = $("#mobileMenu");
+  const overlay = $("#mobileMenuOverlay");
+  const closeButton = $("#menuClose");
+
   if (!menuButton || !menu) return;
 
   function openMenu() {
