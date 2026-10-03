@@ -5,7 +5,7 @@
 
 /* ================================
    RESET
-================================ */
+=============================== */
 
 * {
   margin: 0;
@@ -907,6 +907,71 @@ p {
   font-size: 10px;
   line-height: 1.5;
 }
+
+   /* POLISH COLOUR PALETTE */
+
+.polish-palette {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
+
+.palette-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.palette-heading span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.palette-heading small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.polish-colors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.polish-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 4px;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 9px;
+  transition:
+    border-color var(--fast) var(--ease),
+    background var(--fast) var(--ease);
+}
+
+.polish-color:hover,
+.polish-color.selected {
+  background: var(--bg-soft);
+  border-color: var(--line-strong);
+}
+
+.polish-swatch {
+  width: 38px;
+  height: 38px;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.35);
+   }
 
 
 /* =========================================================
